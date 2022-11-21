@@ -1,0 +1,37 @@
+//Picture tag properties
+@mixin display($pos) {
+    position: $pos;
+}
+@mixin display($dis, $dir){
+    display: $dis;
+    flex-direction: $dir;
+}
+@mixin dimension($left, $bot, $wit, $heig){
+    left: $left;
+    bottom: $bot;
+    width: $wit;
+    height: $heig;
+}
+picture{
+    @include position-display(flex,column-reverse);
+    @include display(relative);
+    place-items: center;
+    padding: 100px;
+       .image{
+           @include display(relative);
+           margin-top: 20px;
+           filter: drop-shadow(5px 8px 10px rgba(#000,.6));
+           :before{
+               content: '';
+               @include display(relative);
+               @include dimension(5.1rem, -4rem, 8rem, 20px);
+               background: rgba(#000, 0.5);
+               border-radius: 50%;
+               z-index: -1;
+               filter: blur(10px);
+           }
+       }
+    }
+:has(> .image :hover) tool-tip{
+    opacity: 1;
+}

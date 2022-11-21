@@ -1,0 +1,27 @@
+@mixin border($transp) {
+    border-left-color: $transp;
+    border-bottom-color: $transp;
+    border-right-color: $transp;
+}
+@mixin dim ($bot, $righ){
+    bottom: $bot;
+    right: $righ;
+}
+tool-tip{
+    @include display (relative);
+    height: 50px;
+    width: 180px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity .3s ease;
+    :before{
+        border: 25px solid white;
+        content: '';
+        @include border(transparent);
+        @include display(absolute);
+        @include dim(-44px, 75px );
+        transform: rotate(-8deg);
+    }
+}

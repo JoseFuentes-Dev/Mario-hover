@@ -1,0 +1,71 @@
+@font-face {
+  font-family: Letra-Mario;
+  src: url(SuperMario256.ttf);
+}
+body {
+  background: url("../assets/img/wallpaperbetter.com_4096x2304.jpg") no-repeat cover center fixed;
+}
+
+p {
+  margin-left: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+b {
+  font-family: Letra-Mario;
+}
+
+picture {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  position: relative;
+}
+
+.image {
+  position: relative;
+  margin-top: 20px;
+  filter: drop-shadow(5px 8px 10px rgba(0, 0, 0, 0.6));
+}
+.image :before {
+  content: "";
+  position: absolute;
+  left: 5.1rem;
+  bottom: -4rem;
+  width: 8rem;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+:has(> .image :hover) tool-tip {
+  opacity: 1;
+}
+
+tool-tip {
+  position: relative;
+  height: 50px;
+  width: 180px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+tool-tip :before {
+  border: 25px solid white;
+  content: "";
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  bottom: -44px;
+  right: 75px;
+  transform: rotate(-8deg);
+}
+
+/*# sourceMappingURL=main.css.map */
