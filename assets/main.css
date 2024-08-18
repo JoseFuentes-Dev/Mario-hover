@@ -3,7 +3,7 @@
   src: url(SuperMario256.ttf);
 }
 body {
-  background: url("../assets/img/wallpaperbetter.com_4096x2304.jpg") no-repeat cover center fixed;
+  background: url("img/wallpaperbetter.com_4096x2304.jpg") no-repeat cover center fixed;
 }
 
 p {
